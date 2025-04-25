@@ -1,1 +1,1 @@
-<h1>Hello laravel....</h1>
+<h1>Welcome......</h1>
