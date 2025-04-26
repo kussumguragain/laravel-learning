@@ -8,7 +8,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        // Fetch all tasks from the database
+        // we fetch all the task from the database
         $tasks = Task::all();
 
         // Return the tasks view, passing tasks to it
@@ -30,4 +30,13 @@ class TaskController extends Controller
         // Redirect back to the task list
         return redirect('/tasks');
     }
+
+    public function destroy($id)
+   {
+    $task = Task::findOrFail($id);
+    $task->delete();
+
+    return response()->json(['message' => 'Task deleted successfully']);
+   }
+
 }
